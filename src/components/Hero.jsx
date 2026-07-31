@@ -37,7 +37,7 @@ const Hero = () => {
             <span className="text-xs font-semibold text-gray-400 tracking-wider uppercase">Total Verified Savings</span>
             <span className="w-2.5 h-2.5 bg-success rounded-full animate-pulse shadow-[0_0_8px_#22c55e]"></span>
           </div>
-          <div className="text-4xl font-extrabold text-white mb-8">KSh 45,000</div>
+          <div className="text-4xl font-extrabold font-mono tracking-tight text-white mb-8">KSh 45,000</div>
           <div className="flex gap-3">
             <div className="h-10 flex-1 bg-primary/20 rounded-xl border border-primary/30 flex items-center justify-center text-primary text-sm font-bold">Chama Pool</div>
             <div className="h-10 flex-1 bg-gray-800/50 rounded-xl flex items-center justify-center text-gray-400 text-sm font-medium">Peer IOUs</div>
@@ -52,7 +52,7 @@ const Hero = () => {
             </div>
             <div className="text-left">
               <div className="text-sm font-bold text-white">M-Pesa Received</div>
-              <div className="text-xs text-gray-400 mt-0.5">KSh 2,500 settled</div>
+              <div className="text-sm text-gray-400"><span className="font-mono text-gray-300">KSh 2,500</span> settled</div>
             </div>
           </div>
         </div>
