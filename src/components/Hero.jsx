@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const Hero = () => {
-  // --- 3. Dynamic Typewriter Logic ---
+  // --- Dynamic Typewriter Logic ---
   const [text, setText] = useState('');
   const [wordIndex, setWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -35,7 +35,7 @@ const Hero = () => {
   return (
     <section className="relative pt-32 pb-20 px-6 min-h-[90vh] flex items-center overflow-hidden" id="about">
       
-      {/* --- 1. Custom Animation Styles --- */}
+      {/* --- Custom Animation Styles --- */}
       <style>
         {`
           @keyframes float {
@@ -51,7 +51,7 @@ const Hero = () => {
         `}
       </style>
 
-      {/* --- 2. Ambient Gradient Orbs --- */}
+      {/* --- Ambient Gradient Orbs --- */}
       <div className="absolute top-20 left-10 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-10 right-20 w-[30rem] h-[30rem] bg-success/10 rounded-full blur-[150px] pointer-events-none"></div>
 
@@ -115,8 +115,8 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Floating Card 1: M-Pesa Received (Uses the float animation) */}
-          <div className="absolute -left-4 md:-left-16 bottom-10 bg-darkcard border border-gray-700 p-4 rounded-2xl shadow-xl flex items-center gap-4 z-20 animate-float w-[240px]">
+          {/* Floating Card 1: M-Pesa Received (Left Side) */}
+          <div className="absolute -left-4 md:-left-20 lg:-left-32 bottom-12 bg-darkcard border border-gray-700 p-4 rounded-2xl shadow-xl flex items-center gap-4 z-20 animate-float w-[240px]">
             <div className="w-10 h-10 rounded-full bg-success/20 flex items-center justify-center text-success font-bold">
               ✓
             </div>
@@ -128,8 +128,8 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Floating Card 2: Action Needed (Uses the delayed float animation) */}
-          <div className="absolute -right-4 md:-right-10 top-10 bg-darkcard border border-warning/30 p-4 rounded-2xl shadow-xl flex items-center gap-4 z-0 animate-float-delayed w-[220px]">
+          {/* Floating Card 2: Action Needed (Pushed significantly downward to stand completely alone) */}
+          <div className="absolute -bottom-20 right-0 md:-bottom-24 md:-right-8 lg:-bottom-24 lg:-right-12 bg-darkcard border border-warning/30 p-4 rounded-2xl shadow-xl flex items-center gap-4 z-20 animate-float-delayed w-[220px]">
             <div className="w-10 h-10 rounded-full bg-warning/20 flex items-center justify-center text-warning font-bold">
               !
             </div>
