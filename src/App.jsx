@@ -2,6 +2,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ProblemSolution from './components/ProblemSolution'
 import FeatureGrid from './components/FeatureGrid'
+import HowItWorks from './components/HowItWorks' // <-- Import here
 import ApkDownloadGuide from './components/ApkDownloadGuide'
 import Footer from './components/Footer'
 
@@ -13,6 +14,7 @@ function App() {
         <Hero />
         <ProblemSolution />
         <FeatureGrid />
+        <HowItWorks /> {/* <-- Add it here */}
         <ApkDownloadGuide />
       </main>
       <Footer />
