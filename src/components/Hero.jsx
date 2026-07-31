@@ -4,15 +4,15 @@ const Hero = () => {
       
       {/* Main Headline */}
       <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight relative z-10">
-        Group money is messy. <br />
+        Group money gets messy. <br />
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">
-          It doesn't have to be.
+          Keep it clean.
         </span>
       </h1>
       
       {/* Subheadline */}
       <p className="text-gray-400 text-lg md:text-xl max-w-2xl mb-10 relative z-10">
-        Automate your Chama savings, track rotating payouts, and settle peer IOUs instantly with multi-signature approvals. 
+        Automate contributions, track rotating payouts, and settle IOUs — all backed by multi-signature approval so no one moves money alone.
       </p>
 
       {/* Call to Action Buttons */}
@@ -26,13 +26,12 @@ const Hero = () => {
       </div>
 
       {/* Eye-Catching Animated UI Mockup */}
-      {/* Set a strict max-width container so the absolute positioning is predictable */}
       <div className="relative w-full max-w-md md:max-w-xl h-[350px] mx-auto mt-8 pointer-events-none">
         
         {/* Deep Purple Background Glow */}
         <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full"></div>
 
-        {/* Main App Card (Anchored to the exact center using inset-x-0 mx-auto) */}
+        {/* Main App Card */}
         <div className="absolute top-10 inset-x-0 mx-auto w-80 z-20 bg-darkcard/90 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-6 shadow-2xl shadow-black/50 animate-[bounce_4s_infinite_ease-in-out]">
           <div className="flex justify-between items-center mb-4">
             <span className="text-xs font-semibold text-gray-400 tracking-wider uppercase">Total Verified Savings</span>
@@ -45,7 +44,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Floating Notification 1 (M-Pesa Success - Pushed safely to the left) */}
+        {/* Floating Notification 1 (M-Pesa Success) */}
         <div className="hidden md:flex absolute top-40 -left-12 lg:-left-20 w-64 z-30 bg-[#1a1728]/90 backdrop-blur-md border border-success/30 rounded-2xl p-4 shadow-xl animate-[bounce_5s_infinite_0.5s_ease-in-out]">
           <div className="flex items-center gap-4 w-full">
             <div className="w-12 h-12 shrink-0 bg-success/20 rounded-full flex items-center justify-center text-success text-xl">
@@ -58,7 +57,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Floating Notification 2 (Pending Approval - Pushed safely to the right) */}
+        {/* Floating Notification 2 (Pending Approval) */}
         <div className="hidden md:flex absolute top-0 -right-8 lg:-right-16 w-56 z-10 bg-[#1a1728]/80 backdrop-blur-md border border-warning/30 rounded-2xl p-4 shadow-xl animate-[bounce_6s_infinite_1s_ease-in-out]">
           <div className="flex items-center gap-4 w-full">
             <div className="w-10 h-10 shrink-0 bg-warning/20 rounded-full flex items-center justify-center text-warning font-bold">
