@@ -66,9 +66,9 @@ const ChamaCycle = () => {
               </div>
 
               {/* Info Card */}
-              <div className={`flex-1 p-5 rounded-2xl border transition-all duration-300 ${
-                member.status === 'active' ? 'bg-darkcard border-primary/50 shadow-lg shadow-primary/10' :
-                'bg-darkbg/50 border-gray-800 opacity-60'
+              <div className={`flex-1 p-5 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                member.status === 'active' ? 'bg-darkcard border-primary/50 shadow-primary/10' :
+                'bg-darkbg/50 border-gray-800 opacity-60 hover:opacity-100 hover:border-gray-600'
               }`}>
                 <div className="flex justify-between items-center mb-1">
                   <span className={`text-xs font-bold uppercase tracking-wider ${
@@ -83,7 +83,7 @@ const ChamaCycle = () => {
         </div>
 
         {/* RIGHT: Active Payout Multi-Sig Dashboard */}
-        <div className="bg-darkcard border border-gray-800 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+        <div className="bg-darkcard border border-gray-800 rounded-3xl p-8 shadow-2xl relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(168,85,247,0.15)]">
           
           {/* Background Glow */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-success/10 blur-[100px] rounded-full pointer-events-none"></div>
@@ -92,7 +92,7 @@ const ChamaCycle = () => {
             <div className="flex justify-between items-start mb-8 border-b border-gray-800/80 pb-6">
               <div>
                 <div className="text-sm font-semibold text-gray-400 mb-1">Current Pool Total</div>
-                <div className="text-4xl font-extrabold text-white">KSh 40,000</div>
+                <div className="text-4xl font-extrabold font-mono tracking-tight text-white">KSh 40,000</div>
               </div>
               <div className="bg-darkbg border border-gray-700 rounded-xl px-4 py-2 text-right">
                 <div className="text-xs text-gray-500 uppercase tracking-widest mb-0.5">Recipient</div>

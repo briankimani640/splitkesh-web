@@ -33,7 +33,7 @@ const SplitCalculator = () => {
         <div className="lg:col-span-7 space-y-8">
           
           {/* Bill Amount Input */}
-          <div className="bg-darkcard border border-gray-800 rounded-3xl p-6 md:p-8 shadow-xl">
+          <div className="bg-darkcard border border-gray-800 rounded-3xl p-6 md:p-8 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
             <label className="block text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">
               Total Bill Amount (KSh)
             </label>
@@ -43,7 +43,7 @@ const SplitCalculator = () => {
                 type="number" 
                 value={totalAmount} 
                 onChange={(e) => setTotalAmount(Number(e.target.value))}
-                className="w-full bg-darkbg border-2 border-gray-800 rounded-2xl pl-20 pr-6 py-5 text-3xl font-extrabold text-white focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/20 transition-all"
+                className="w-full bg-darkbg border-2 border-gray-800 rounded-2xl pl-20 pr-6 py-5 text-3xl font-extrabold font-mono text-white focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/20 transition-all"
                 min="0"
                 step="500"
               />
@@ -51,7 +51,7 @@ const SplitCalculator = () => {
           </div>
 
           {/* Members & Payer Controls */}
-          <div className="bg-darkcard border border-gray-800 rounded-3xl p-6 md:p-8 shadow-xl space-y-8">
+          <div className="bg-darkcard border border-gray-800 rounded-3xl p-6 md:p-8 shadow-xl space-y-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
             
             {/* Number of People */}
             <div>
@@ -100,8 +100,8 @@ const SplitCalculator = () => {
                     onClick={() => setPayerIndex(index)}
                     className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-200 border ${
                       payerIndex === index 
-                        ? 'bg-primary border-primary text-white shadow-lg shadow-primary/25' 
-                        : 'bg-darkbg border-gray-700 text-gray-400 hover:border-gray-500 hover:text-white'
+                        ? 'bg-primary border-primary text-white shadow-lg shadow-primary/25 hover:-translate-y-0.5' 
+                        : 'bg-darkbg border-gray-700 text-gray-400 hover:border-gray-500 hover:text-white hover:-translate-y-0.5'
                     }`}
                   >
                     {name}
@@ -114,7 +114,7 @@ const SplitCalculator = () => {
         </div>
 
         {/* RIGHT COLUMN: The Settlement Ledger */}
-        <div className="lg:col-span-5 relative">
+        <div className="lg:col-span-5 relative transition-all duration-300 hover:-translate-y-2">
           
           {/* Decorative Glow */}
           <div className="absolute -inset-1 bg-gradient-to-b from-primary/30 to-transparent blur-2xl rounded-3xl opacity-50 pointer-events-none"></div>
@@ -132,11 +132,11 @@ const SplitCalculator = () => {
               <div className="flex justify-between items-end mb-8">
                 <div>
                   <div className="text-sm text-gray-400 mb-1">Total Paid by {payerName}</div>
-                  <div className="text-3xl font-bold text-white">KSh {totalAmount.toLocaleString()}</div>
+                  <div className="text-3xl font-bold font-mono text-white">KSh {totalAmount.toLocaleString()}</div>
                 </div>
                 <div className="text-right">
                   <div className="text-sm text-gray-400 mb-1">Per Person</div>
-                  <div className="text-xl font-bold text-primary">KSh {perPerson.toLocaleString()}</div>
+                  <div className="text-xl font-bold font-mono text-primary">KSh {perPerson.toLocaleString()}</div>
                 </div>
               </div>
 
@@ -147,14 +147,14 @@ const SplitCalculator = () => {
                   if (index === payerIndex) return null; // Payer doesn't owe themselves
                   
                   return (
-                    <div key={name} className="flex items-center justify-between bg-darkbg/50 border border-gray-800 rounded-xl p-4 transition-all hover:bg-darkbg">
+                    <div key={name} className="flex items-center justify-between bg-darkbg/50 border border-gray-800 rounded-xl p-4 transition-all hover:bg-darkbg hover:border-gray-600">
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-xs font-bold text-gray-300">
                           {name.charAt(0)}
                         </div>
                         <span className="text-sm font-medium text-white">{name} owes {payerName}</span>
                       </div>
-                      <span className="text-sm font-bold text-warning">
+                      <span className="text-sm font-bold font-mono text-warning">
                         KSh {perPerson.toLocaleString()}
                       </span>
                     </div>
