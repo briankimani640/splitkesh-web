@@ -23,7 +23,7 @@ const FeatureGrid = () => {
   ];
 
   return (
-    <section className="py-20 px-6 max-w-6xl mx-auto border-t border-gray-800/50">
+    <section className="py-20 px-6 max-w-6xl mx-auto border-t border-gray-800/50" id="features">
       
       {/* Section Header */}
       <div className="text-center mb-16">

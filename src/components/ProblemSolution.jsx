@@ -1,6 +1,6 @@
 const ProblemSolution = () => {
   return (
-    <section className="py-20 px-6 max-w-6xl mx-auto">
+    <section className="py-20 px-6 max-w-6xl mx-auto" id="about">
       
       {/* Section Header */}
       <div className="text-center mb-16">
