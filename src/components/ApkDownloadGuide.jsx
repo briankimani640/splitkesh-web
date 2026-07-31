@@ -21,8 +21,8 @@ const ApkDownloadGuide = () => {
           </p>
 
           <a 
-            href="/downloads/splitkesh.apk" 
-            download="splitkesh.apk"
+            href="/downloads/splitkesh-v1.apk" 
+            download="SplitKesh-v1.0.apk"
             className="inline-flex items-center gap-3 bg-primary hover:bg-purple-500 text-white text-lg font-semibold py-4 px-10 rounded-full transition-all duration-200 shadow-lg shadow-primary/25 hover:scale-105"
           >
             <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">

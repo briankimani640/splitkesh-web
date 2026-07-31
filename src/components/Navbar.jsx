@@ -20,7 +20,8 @@ const Navbar = () => {
           
           {/* Smooth Scroll Download Button */}
           <a 
-            href="#download" 
+            href="/downloads/splitkesh-v1.apk" 
+            download="SplitKesh-v1.0.apk"
             className="bg-primary/10 text-primary px-5 py-2 rounded-full border border-primary/20 hover:bg-primary hover:text-white transition-all duration-200"
           >
             Download APK
