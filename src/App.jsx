@@ -3,10 +3,11 @@ import Hero from './components/Hero'
 import ProblemSolution from './components/ProblemSolution'
 import FeatureGrid from './components/FeatureGrid'
 import SplitCalculator from './components/SplitCalculator'
-import ChamaCycle from './components/ChamaCycle' // <-- Import the new timeline
+import ChamaCycle from './components/ChamaCycle'
 import HowItWorks from './components/HowItWorks'
 import TeamSection from './components/TeamSection'
 import FaqSection from './components/FaqSection'
+import SystemStatus from './components/SystemStatus' // <-- Import the new status bar
 import ApkDownloadGuide from './components/ApkDownloadGuide'
 import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
@@ -20,10 +21,11 @@ function App() {
         <ProblemSolution />
         <FeatureGrid />
         <SplitCalculator />
-        <ChamaCycle /> {/* <-- Render it here */}
+        <ChamaCycle />
         <HowItWorks />
         <TeamSection />
         <FaqSection />
+        <SystemStatus /> {/* <-- Render it right before the download guide */}
         <ApkDownloadGuide />
         <ContactForm />
       </main>
