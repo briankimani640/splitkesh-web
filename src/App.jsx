@@ -4,8 +4,9 @@ import ProblemSolution from './components/ProblemSolution'
 import FeatureGrid from './components/FeatureGrid'
 import HowItWorks from './components/HowItWorks'
 import TeamSection from './components/TeamSection'
-import FaqSection from './components/FaqSection' // <-- Import here
+import FaqSection from './components/FaqSection'
 import ApkDownloadGuide from './components/ApkDownloadGuide'
+import ContactForm from './components/ContactForm' // <-- Import here
 import Footer from './components/Footer'
 
 function App() {
@@ -18,8 +19,9 @@ function App() {
         <FeatureGrid />
         <HowItWorks />
         <TeamSection />
-        <FaqSection /> {/* <-- Add it here */}
+        <FaqSection />
         <ApkDownloadGuide />
+        <ContactForm /> {/* <-- Add it here */}
       </main>
       <Footer />
     </div>
