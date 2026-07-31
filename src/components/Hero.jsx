@@ -1,77 +1,146 @@
+import { useState, useEffect } from 'react';
+
 const Hero = () => {
+  // --- 3. Dynamic Typewriter Logic ---
+  const [text, setText] = useState('');
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  
+  const words = ["Chamas", "Roommates", "Savings Pools", "Roadtrips", "Saccos"];
+
+  useEffect(() => {
+    const typingSpeed = isDeleting ? 50 : 120;
+    const currentWord = words[wordIndex];
+
+    const handleType = () => {
+      if (isDeleting) {
+        setText(currentWord.substring(0, text.length - 1));
+      } else {
+        setText(currentWord.substring(0, text.length + 1));
+      }
+
+      if (!isDeleting && text === currentWord) {
+        // Pause at the end of the word before deleting
+        setTimeout(() => setIsDeleting(true), 1500);
+      } else if (isDeleting && text === '') {
+        setIsDeleting(false);
+        setWordIndex((prev) => (prev + 1) % words.length);
+      }
+    };
+
+    const timer = setTimeout(handleType, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [text, isDeleting, wordIndex, words]);
+
   return (
-    <section className="flex flex-col items-center justify-center min-h-[90vh] px-6 text-center pt-24 pb-16 overflow-hidden">
+    <section className="relative pt-32 pb-20 px-6 min-h-[90vh] flex items-center overflow-hidden" id="about">
       
-      {/* Main Headline */}
-      <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight relative z-10">
-        Group money gets messy. <br />
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">
-          Keep it clean.
-        </span>
-      </h1>
-      
-      {/* Subheadline */}
-      <p className="text-gray-400 text-lg md:text-xl max-w-2xl mb-10 relative z-10">
-        Automate contributions, track rotating payouts, and settle IOUs — all backed by multi-signature approval so no one moves money alone.
-      </p>
+      {/* --- 1. Custom Animation Styles --- */}
+      <style>
+        {`
+          @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+          }
+          .animate-float {
+            animation: float 6s ease-in-out infinite;
+          }
+          .animate-float-delayed {
+            animation: float 6s ease-in-out 3s infinite;
+          }
+        `}
+      </style>
 
-      {/* Call to Action Buttons */}
-      <div className="flex flex-col sm:flex-row gap-4 mb-20 relative z-10">
-        <a href="#download" className="bg-primary hover:bg-purple-500 text-white font-semibold py-4 px-10 rounded-full transition-all duration-300 shadow-lg shadow-primary/25 hover:scale-105">
-          Download APK
-        </a>
-        <a href="#how-it-works" className="bg-darkcard border border-gray-700 hover:border-primary text-white font-semibold py-4 px-10 rounded-full transition-colors duration-300">
-          How it Works
-        </a>
-      </div>
+      {/* --- 2. Ambient Gradient Orbs --- */}
+      <div className="absolute top-20 left-10 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-10 right-20 w-[30rem] h-[30rem] bg-success/10 rounded-full blur-[150px] pointer-events-none"></div>
 
-      {/* Eye-Catching Animated UI Mockup */}
-      <div className="relative w-full max-w-md md:max-w-xl h-[350px] mx-auto mt-8 pointer-events-none">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
         
-        {/* Deep Purple Background Glow */}
-        <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full"></div>
-
-        {/* Main App Card */}
-        <div className="absolute top-10 inset-x-0 mx-auto w-80 z-20 bg-darkcard/90 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-6 shadow-2xl shadow-black/50 animate-[bounce_4s_infinite_ease-in-out]">
-          <div className="flex justify-between items-center mb-4">
-            <span className="text-xs font-semibold text-gray-400 tracking-wider uppercase">Total Verified Savings</span>
-            <span className="w-2.5 h-2.5 bg-success rounded-full animate-pulse shadow-[0_0_8px_#22c55e]"></span>
+        {/* Left Column: Copy & CTA */}
+        <div className="space-y-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-darkcard border border-gray-800 text-xs font-bold text-gray-300 uppercase tracking-widest shadow-lg">
+            <span className="w-2 h-2 rounded-full bg-success animate-pulse"></span>
+            SplitKesh Engine v1.0 Live
           </div>
-          <div className="text-4xl font-extrabold font-mono tracking-tight text-white mb-8">KSh 45,000</div>
-          <div className="flex gap-3">
-            <div className="h-10 flex-1 bg-primary/20 rounded-xl border border-primary/30 flex items-center justify-center text-primary text-sm font-bold">Chama Pool</div>
-            <div className="h-10 flex-1 bg-gray-800/50 rounded-xl flex items-center justify-center text-gray-400 text-sm font-medium">Peer IOUs</div>
+          
+          <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight">
+            The multi-signature <br className="hidden md:block" /> financial ledger for <br />
+            <span className="text-primary">{text}</span>
+            <span className="animate-pulse text-gray-500 font-light">|</span>
+          </h1>
+          
+          <p className="text-lg text-gray-400 max-w-lg leading-relaxed">
+            Automate group savings, lock rotating asset pools with multi-sig security, and instantly split bills via Safaricom M-Pesa. Built for modern groups.
+          </p>
+          
+          <div className="flex flex-wrap items-center gap-4 pt-4">
+            <a 
+              href="#chama-cycle" 
+              className="bg-primary hover:bg-purple-500 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-0.5"
+            >
+              See how it works
+            </a>
+            <a 
+              href="#download" 
+              className="bg-darkcard border border-gray-700 hover:border-gray-500 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:-translate-y-0.5"
+            >
+              Download APK
+            </a>
           </div>
         </div>
 
-        {/* Floating Notification 1 (M-Pesa Success) */}
-        <div className="hidden md:flex absolute top-40 -left-12 lg:-left-20 w-64 z-30 bg-[#1a1728]/90 backdrop-blur-md border border-success/30 rounded-2xl p-4 shadow-xl animate-[bounce_5s_infinite_0.5s_ease-in-out]">
-          <div className="flex items-center gap-4 w-full">
-            <div className="w-12 h-12 shrink-0 bg-success/20 rounded-full flex items-center justify-center text-success text-xl">
+        {/* Right Column: Dynamic Mockup & Floating Cards */}
+        <div className="relative flex justify-center lg:justify-end mt-10 lg:mt-0">
+          
+          {/* Main Dashboard Card */}
+          <div className="bg-[#1a1728]/80 backdrop-blur-md border border-gray-700/50 rounded-3xl p-8 shadow-2xl shadow-black/50 w-full max-w-sm z-10 relative">
+            <div className="flex justify-between items-center mb-6">
+              <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Total Verified Savings</span>
+              <span className="w-2.5 h-2.5 rounded-full bg-success animate-pulse"></span>
+            </div>
+            
+            {/* The mono-font number */}
+            <div className="text-4xl font-extrabold font-mono tracking-tight text-white mb-8">
+              KSh 45,000
+            </div>
+            
+            <div className="grid grid-cols-2 gap-4">
+              <button className="bg-primary/20 border border-primary/30 text-primary py-3 rounded-xl text-sm font-bold transition-all hover:bg-primary hover:text-white">
+                Chama Pool
+              </button>
+              <button className="bg-darkbg border border-gray-700 text-gray-300 py-3 rounded-xl text-sm font-bold transition-all hover:border-gray-500 hover:text-white">
+                Peer IOUs
+              </button>
+            </div>
+          </div>
+
+          {/* Floating Card 1: M-Pesa Received (Uses the float animation) */}
+          <div className="absolute -left-4 md:-left-16 bottom-10 bg-darkcard border border-gray-700 p-4 rounded-2xl shadow-xl flex items-center gap-4 z-20 animate-float w-[240px]">
+            <div className="w-10 h-10 rounded-full bg-success/20 flex items-center justify-center text-success font-bold">
               ✓
             </div>
-            <div className="text-left">
-              <div className="text-sm font-bold text-white">M-Pesa Received</div>
-              <div className="text-sm text-gray-400"><span className="font-mono text-gray-300">KSh 2,500</span> settled</div>
+            <div>
+              <div className="text-sm font-bold text-white mb-0.5">M-Pesa Received</div>
+              <div className="text-xs text-gray-400">
+                <span className="font-mono text-gray-300">KSh 2,500</span> settled
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Floating Notification 2 (Pending Approval) */}
-        <div className="hidden md:flex absolute top-0 -right-8 lg:-right-16 w-56 z-10 bg-[#1a1728]/80 backdrop-blur-md border border-warning/30 rounded-2xl p-4 shadow-xl animate-[bounce_6s_infinite_1s_ease-in-out]">
-          <div className="flex items-center gap-4 w-full">
-            <div className="w-10 h-10 shrink-0 bg-warning/20 rounded-full flex items-center justify-center text-warning font-bold">
+          {/* Floating Card 2: Action Needed (Uses the delayed float animation) */}
+          <div className="absolute -right-4 md:-right-10 top-10 bg-darkcard border border-warning/30 p-4 rounded-2xl shadow-xl flex items-center gap-4 z-0 animate-float-delayed w-[220px]">
+            <div className="w-10 h-10 rounded-full bg-warning/20 flex items-center justify-center text-warning font-bold">
               !
             </div>
-            <div className="text-left">
-              <div className="text-sm font-bold text-white">Action Needed</div>
-              <div className="text-xs text-gray-400 mt-0.5">Merry-Go-Round</div>
+            <div>
+              <div className="text-sm font-bold text-white mb-0.5">Action Needed</div>
+              <div className="text-xs text-gray-400">Merry-Go-Round</div>
             </div>
           </div>
-        </div>
-        
-      </div>
 
+        </div>
+      </div>
     </section>
   );
 };
