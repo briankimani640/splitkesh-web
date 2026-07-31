@@ -2,7 +2,8 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ProblemSolution from './components/ProblemSolution'
 import FeatureGrid from './components/FeatureGrid'
-import SplitCalculator from './components/SplitCalculator' // <-- Added Split Calculator
+import SplitCalculator from './components/SplitCalculator'
+import ChamaCycle from './components/ChamaCycle' // <-- Import the new timeline
 import HowItWorks from './components/HowItWorks'
 import TeamSection from './components/TeamSection'
 import FaqSection from './components/FaqSection'
@@ -18,7 +19,8 @@ function App() {
         <Hero />
         <ProblemSolution />
         <FeatureGrid />
-        <SplitCalculator /> {/* <-- Rendered here to test live splits */}
+        <SplitCalculator />
+        <ChamaCycle /> {/* <-- Render it here */}
         <HowItWorks />
         <TeamSection />
         <FaqSection />
