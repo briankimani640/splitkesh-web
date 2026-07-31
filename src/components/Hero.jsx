@@ -82,7 +82,8 @@ const Hero = () => {
               See how it works
             </a>
             <a 
-              href="#download" 
+              href="/downloads/splitkesh-v1.apk"
+              download="SplitKesh-v1.0.apk"
               className="bg-darkcard border border-gray-700 hover:border-gray-500 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:-translate-y-0.5"
             >
               Download APK
