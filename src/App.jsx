@@ -3,7 +3,8 @@ import Hero from './components/Hero'
 import ProblemSolution from './components/ProblemSolution'
 import FeatureGrid from './components/FeatureGrid'
 import HowItWorks from './components/HowItWorks'
-import TeamSection from './components/TeamSection' // <-- Import here
+import TeamSection from './components/TeamSection'
+import FaqSection from './components/FaqSection' // <-- Import here
 import ApkDownloadGuide from './components/ApkDownloadGuide'
 import Footer from './components/Footer'
 
@@ -16,7 +17,8 @@ function App() {
         <ProblemSolution />
         <FeatureGrid />
         <HowItWorks />
-        <TeamSection /> {/* <-- Add it here */}
+        <TeamSection />
+        <FaqSection /> {/* <-- Add it here */}
         <ApkDownloadGuide />
       </main>
       <Footer />
