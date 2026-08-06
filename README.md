@@ -1,4 +1,4 @@
-### link 
+### link to the website
 (https://splitkesh-web.vercel.app/)
 ## React + Vite
 
