@@ -57,7 +57,7 @@ const Hero = () => {
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
         
-        {/* Left Column: Copy & CTA */}
+        {/* Left Column: Copy, CTA & Institutional Trust Bar */}
         <div className="space-y-8">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-darkcard border border-gray-800 text-xs font-bold text-gray-300 uppercase tracking-widest shadow-lg">
             <span className="w-2 h-2 rounded-full bg-success animate-pulse"></span>
@@ -82,12 +82,31 @@ const Hero = () => {
               See how it works
             </a>
             <a 
-              href="/downloads/splitkesh-v1.apk"
+              href="/downloads/splitkesh-v1.apk" 
               download="SplitKesh-v1.0.apk"
               className="bg-darkcard border border-gray-700 hover:border-gray-500 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:-translate-y-0.5"
             >
               Download APK
             </a>
+          </div>
+
+          {/* --- Institutional Trust Bar --- */}
+          <div className="pt-8 mt-6 border-t border-gray-800/60 w-full max-w-lg">
+            <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">
+              Incubated & Supported By
+            </p>
+            <div className="flex items-center gap-8">
+              <img 
+                src="/jhub-logo.png" 
+                alt="JHUB Africa" 
+                className="h-10 md:h-12 object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+              />
+              <img 
+                src="/jkuat-logo.png" 
+                alt="JKUAT" 
+                className="h-10 md:h-12 object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+              />
+            </div>
           </div>
         </div>
 
@@ -129,7 +148,7 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Floating Card 2: Action Needed (Pushed significantly downward to stand completely alone) */}
+          {/* Floating Card 2: Action Needed (Standing alone below main card) */}
           <div className="absolute -bottom-20 right-0 md:-bottom-24 md:-right-8 lg:-bottom-24 lg:-right-12 bg-darkcard border border-warning/30 p-4 rounded-2xl shadow-xl flex items-center gap-4 z-20 animate-float-delayed w-[220px]">
             <div className="w-10 h-10 rounded-full bg-warning/20 flex items-center justify-center text-warning font-bold">
               !
