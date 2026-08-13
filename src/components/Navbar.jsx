@@ -10,6 +10,18 @@ const Navbar = () => {
           </div>
           <span className="text-xl font-bold text-white tracking-wide group-hover:text-primary transition-colors">SplitKesh</span>
         </a>
+                    <div className="flex items-center gap-8">
+              <img 
+                src="/jhub-logo.png" 
+                alt="JHUB Africa" 
+                className="h-10 md:h-12 object-contain opacity-100" 
+              />
+              <img 
+                src="/jkuat-logo.png" 
+                alt="JKUAT" 
+                className="h-10 md:h-12 object-contain opacity-100 "
+              />
+            </div>
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">

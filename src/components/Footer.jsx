@@ -41,6 +41,18 @@ const Footer = () => {
         </div>
 
       </div>
+                  <div className="flex items-center gap-8">
+              <img 
+                src="/jhub-logo.png" 
+                alt="JHUB Africa" 
+                className="h-10 md:h-12 object-contain opacity-100  " 
+              />
+              <img 
+                src="/jkuat-logo.png" 
+                alt="JKUAT" 
+                className="h-10 md:h-12 object-contain opacity-100  "
+              />
+            </div>
 
       {/* Bottom Copyright Bar */}
       <div className="max-w-6xl mx-auto pt-8 border-t border-gray-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">

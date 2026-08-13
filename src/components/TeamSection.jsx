@@ -1,5 +1,6 @@
 const TeamSection = () => {
   const team = [
+    { initials: "DR", name: "Dr. Lawrence Nderu", role: "Project Supevisor/ Lead supervisor", color: "bg-blue-500 shadow-blue-500/20" },
     { initials: "RN", name: "Rodney Njiru", role: "Team Lead & Database Engineer", color: "bg-blue-500 shadow-blue-500/20" },
     { initials: "CM", name: "Chilon Murubi", role: "Backend Engineer", color: "bg-emerald-500 shadow-emerald-500/20" },
     { initials: "BK", name: "Brian Kimani", role: "Frontend Developer", color: "bg-primary shadow-primary/20" },
